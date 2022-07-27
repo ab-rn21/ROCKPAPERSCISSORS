@@ -41,3 +41,5 @@ let playRound = (playerSelection, computerSelection) => {
         }
     }
 }
+
+playRound(getPlayerChoice(), getComputerChoice());
