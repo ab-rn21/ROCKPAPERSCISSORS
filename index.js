@@ -10,6 +10,10 @@ let getComputerChoice = () => {
     }
 }
 
+let getPlayerChoice = () => {
+    return prompt("Rock, Paper, or Scissors").toLowerCase();
+}
+
 let playRound = (playerSelection, computerSelection) => {
     if (playerSelection == "rock") {
         if (computerSelection == "Paper") {
