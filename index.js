@@ -13,7 +13,6 @@ let getComputerChoice = () => {
 }
 
 let playRound = (playerSelection, computerSelection) => {
-
     let result = document.querySelector(".battleGround");
     let body = document.querySelector(".body");
     body.removeChild(result);
@@ -117,11 +116,24 @@ function playerChoice(e) {
     let body = document.querySelector(".body");
     setTimeout(() => {
         body.removeChild(body.lastChild);
-    }, 2000);
+        let images = document.createElement("div");
+        images.classList.add("images");
+        body.appendChild(images);
+        images.innerHTML = temp;
+        if (userScore == 5 || computerScore == 5) {
+            body.removeChild(body.lastChild);
+            let victory = document.createElement("p");
+            victory.classList.add("victory");
+            body.appendChild(victory);
+            
+            if (userScore == 5) {
+                victory.appendChild(document.createTextNode("You Win!"));
+            } else if (computerScore == 5) {
+                victory.appendChild(document.createTextNode("Computer Wins!"));
+            }
+        }
+    }, 3000);
     
-    // let images = document.createElement("div").classList.add("images");
-    // body.appendChild(images);
-    // images.innerHTML = temp;
 }
 
 let body = document.getElementsByTagName('body');
